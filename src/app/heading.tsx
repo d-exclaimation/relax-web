@@ -23,7 +23,7 @@ export default rc(() => {
       if (!timeoutRef.current) return;
       clearTimeout(timeoutRef.current);
     };
-  });
+  }, []);
   return (
     <h1 className="relative text-2xl md:text-6xl font-bold font-cal">
       {CHARS.slice(0, index)}

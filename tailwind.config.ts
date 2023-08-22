@@ -31,6 +31,9 @@ export default {
           "50%": { opacity: "0" },
         },
       },
+      data: {
+        active: "active=true",
+      },
     },
   },
   plugins: [],
