@@ -1,5 +1,6 @@
 import PanelGradient from "@/lib/components/panel-gradient";
 import { page } from "@d-exclaimation/next";
+import Link from "next/link";
 import Description from "./description";
 import Heading from "./heading";
 export default page(() => {
@@ -13,16 +14,16 @@ export default page(() => {
 
       <Description />
 
-      <div className="cursor-wait text-sm md:text-base px-2.5 py-1.5 rounded-md bg-surface-dark text-white z-10 hover:bg-surface-dark/80 transition-all">
+      {/* <div className="cursor-wait text-sm md:text-base px-2.5 py-1.5 rounded-md bg-surface-dark text-white z-10 hover:bg-surface-dark/80 transition-all">
         Coming Soon
-      </div>
+      </div> */}
 
-      {/* <Link
+      <Link
         href="/x"
         className="text-sm md:text-base px-2.5 py-1.5 rounded-md bg-surface-dark text-white z-10 hover:bg-surface-dark/80 transition-all"
       >
         Get Started
-      </Link> */}
+      </Link>
     </main>
   );
 });
