@@ -25,10 +25,14 @@ export default {
       },
       animation: {
         flick: "flick 1s ease-in-out infinite",
+        rise: "rise 0.5s cubic-bezier(0.5, 0, 1, 1)",
       },
       keyframes: {
         flick: {
           "50%": { opacity: "0" },
+        },
+        rise: {
+          "0%": { height: "0" },
         },
       },
       data: {
@@ -36,5 +40,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;

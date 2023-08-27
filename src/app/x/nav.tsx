@@ -26,7 +26,7 @@ const routes = [
 export default rc(() => {
   const pathname = usePathname();
   return (
-    <div className="w-full flex items-center justify-center gap-3 py-4 sticky top-0">
+    <div className="w-full flex items-center justify-center gap-3 py-4 sticky top-0 z-50 bg-[#FDFCFB]">
       {routes.map(({ name, href }) => (
         <Link
           key={`${name}-${href}`}
