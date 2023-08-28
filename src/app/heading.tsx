@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 const CHARS = "Relax, we'll handle it for you".split("");
 
-const INTERVAL = 2000 / CHARS.length;
+const INTERVAL = 1500 / CHARS.length;
 
 export default rc(() => {
   const timeoutRef = useRef<NodeJS.Timeout | number>();

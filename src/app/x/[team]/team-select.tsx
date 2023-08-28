@@ -20,7 +20,7 @@ export default rc<Props>(({ teams, onChange }) => {
         <button
           className="flex items-center justify-between flex-1 md:flex-[unset] min-w-[12rem]
           gap-1.5 px-2.5 py-1.5 rounded-md bg-stone-50 text-sand 
-          outline outline-1 md:outline-2 outline-sand/5"
+          outline outline-1 md:outline-2 outline-sand/5 focus-visible:outline-sand"
         >
           <div className="flex items-center justify-start gap-2">
             {selected?.img && (

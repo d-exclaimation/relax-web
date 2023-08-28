@@ -18,8 +18,8 @@ const routes = [
     href: "/x/docs",
   },
   {
-    name: "Help",
-    href: "/x/help",
+    name: "Github",
+    href: "/github",
   },
 ];
 
@@ -31,10 +31,10 @@ export default rc(() => {
         <Link
           key={`${name}-${href}`}
           className="font-medium px-2.5 py-0.5 rounded text-sm transition-all
-          hover:bg-surface-dark/5
-          data-active:text-surface-light data-active:bg-surface-dark"
+          focus-visible:outline focus-visible:outline-2 focus-visible:outline-sand
+          hover:bg-surface-dark/5 data-active:text-surface-light data-active:bg-surface-dark"
           href={href}
-          data-active={pathname == href}
+          data-active={href === "/x" && pathname.includes("/x")}
         >
           {name}
         </Link>

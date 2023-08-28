@@ -1,3 +1,5 @@
+"use client";
+
 import { rc } from "@d-exclaimation/next";
 import {
   useEffect,

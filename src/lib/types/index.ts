@@ -27,3 +27,26 @@ export type Dashboard = {
   }[];
   max: number;
 };
+
+export type IndiviualDashboard = {
+  dash: {
+    id: string;
+    name: string;
+    review: number;
+    reviewings: {
+      id: string;
+      name: string;
+      reviewee: number;
+    }[];
+    reviewees: {
+      id: string;
+      name: string;
+      reviewer: number;
+    }[];
+    avg: {
+      reviewing: number;
+      reviewed: number;
+    };
+  };
+  max: number;
+};

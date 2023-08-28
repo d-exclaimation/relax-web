@@ -27,19 +27,32 @@ export default rc<Dashboard>(({ dash, max }) => {
   return (
     <div className="flex-1 w-full h-full flex flex-col gap-4">
       <div className="flex flex-shrink-0 items-center justify-between w-full">
-        <span className="text-xs md:text-sm font-semibold">
-          Odds of becoming next reviewer
-        </span>
+        <div className="flex text-xs md:text-sm font-semibold">
+          <span
+            className="relative transition-all duration-500 -translate-y-4 opacity-0 data-active:translate-y-0 data-active:opacity-100"
+            data-active={tab === "odds"}
+          >
+            Odds of becoming next reviewer
+          </span>
+          <span
+            className="absolute transition-all duration-500 translate-y-4 opacity-0 data-active:translate-y-0 data-active:opacity-100"
+            data-active={tab === "reviews"}
+          >
+            Reviews done
+          </span>
+        </div>
         <div className="flex items-center justify-around gap-2 px-0.5 py-0.5 rounded-[0.325rem] bg-sand/30">
           <button
-            className="data-active:bg-white rounded px-2 py-1 text-xs transition-all"
+            className="data-active:bg-white rounded px-2 py-1 text-xs transition-all
+            focus-visible:outline focus-visible:outline-2 focus-visible:outline-sand"
             data-active={tab === "odds"}
             onClick={() => setTab("odds")}
           >
             Odds
           </button>
           <button
-            className="data-active:bg-white rounded px-2 py-1 text-xs transition-all"
+            className="data-active:bg-white rounded px-2 py-1 text-xs transition-all
+            focus-visible:outline focus-visible:outline-2 focus-visible:outline-sand"
             data-active={tab === "reviews"}
             onClick={() => setTab("reviews")}
           >

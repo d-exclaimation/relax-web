@@ -5,7 +5,7 @@ import Incrementing from "@/lib/components/incrementing";
 import type { Dashboard } from "@/lib/types";
 import { rc } from "@d-exclaimation/next";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import { useMemo } from "react";
 import TeamCharts from "./team-charts";
 import TeamSelect from "./team-select";
@@ -19,9 +19,11 @@ const teams = [
   },
 ];
 
-export default rc<Dashboard>(({ dash, max }) => {
-  const searchParams = useSearchParams();
-  const teamId = searchParams.get("team") ?? "s302g7";
+type Props = Dashboard & {
+  teamId: string;
+};
+
+export default rc<Props>(({ dash, max, teamId }) => {
   const team = useMemo(() => {
     return teams.find(({ id }) => id === teamId);
   }, [teamId]);
@@ -139,24 +141,26 @@ export default rc<Dashboard>(({ dash, max }) => {
 
           <section
             id="team-members"
-            className="flex-[3] md:h-full md:overflow-y-auto flex flex-col gap-3 md:pl-2 md:border-l md:border-sand/5"
+            className="flex-[3] md:h-full md:overflow-y-auto flex flex-col gap-3 md:pl-1 md:border-l md:border-sand/5"
           >
             <span className="text-sm font-semibold mx-2">Members</span>
             {dash.map(({ id, name, avg }) => (
-              <div
+              <Link
                 key={`member-${id}`}
-                className="flex items-center gap-2.5 w-full rounded-lg p-3 group hover:bg-sand"
+                href={`/x/${teamId}/member/${id}`}
+                className="flex items-center gap-2.5 w-full rounded-lg p-3 group hover:bg-sand
+                focus:outline-none focus:bg-sand"
               >
                 <img
                   className="w-10 h-10 mx-2 rounded-full outline outline-1 outline-sand/20 object-cover"
                   src={`https://night.saturday.fitness/members/${id}.webp`}
                   // src={`https://api.dicebear.com/6.x/thumbs/svg?seed=member${i}`}
                 />
-                <div className="flex flex-col gap-1">
-                  <span className="text-sm font-medium group-hover:text-white">
+                <div className="flex flex-col gap-1 items-start">
+                  <span className="text-sm font-medium group-hover:text-white group-focus:text-white">
                     {name}
                   </span>
-                  <span className="text-xs font-light group-hover:text-white">
+                  <span className="text-xs font-light group-hover:text-white group-focus:text-white">
                     {id}
                   </span>
                 </div>
@@ -173,20 +177,20 @@ export default rc<Dashboard>(({ dash, max }) => {
                       r="15.915"
                       cx="50%"
                       cy="50%"
-                      className="fill-none stroke-bronze/30 group-hover:stroke-white/50"
+                      className="fill-none stroke-bronze/30 group-hover:stroke-white/50 group-focus:stroke-white/50"
                     />
                     <circle
                       strokeWidth="8"
                       r="15.915"
                       cx="50%"
                       cy="50%"
-                      className="fill-none animate-progress stroke-bronze group-hover:stroke-white"
+                      className="fill-none animate-progress stroke-bronze group-hover:stroke-white group-focus:stroke-white"
                       strokeDasharray={`${Math.round(avg.reviewing)}, 100`}
                       strokeLinecap="round"
                     />
                   </g>
                 </svg>
-              </div>
+              </Link>
             ))}
           </section>
         </div>
