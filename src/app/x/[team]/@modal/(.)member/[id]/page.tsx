@@ -12,12 +12,12 @@ export default page<{ P: Parameters }>(async ({ params }) => {
   const dash = await fetchIndiviualDash(params.id);
   return (
     <FloatingPage>
-      <div className="flex flex-col gap-6 w-full py-8 px-4 md:p-6">
+      <div className="flex flex-col gap-6 w-full py-8 px-4 h-full max-w-5xl overflow-y-auto md:p-6">
         <PageClient team={params.team} {...dash} />
       </div>
     </FloatingPage>
   );
 });
 
-export const revalidate = 10;
+export const revalidate = 30;
 export const runtime = "edge";

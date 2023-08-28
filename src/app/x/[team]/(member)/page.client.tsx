@@ -146,7 +146,7 @@ export default rc<IndiviualDashboard & { team: string }>(
             </div>
           </div>
 
-          <div className="w-full h-px my-2 md:my-0 md:w-px md:h-[16rem] bg-sand/10 md:mx-2" />
+          <div className="w-full h-px my-2 md:my-0 md:w-px md:h-[16rem] bg-sand/10 md:mx-4" />
 
           <div className="flex flex-col w-full p-2">
             <span className="font-semibold">Reviewing</span>

@@ -30,7 +30,14 @@ export default layout(({ children }) => {
       className="bg-surface-light dark:bg-surface-dark w-full h-full"
       lang="en"
     >
-      <body className={`${manrope.className} w-full h-full`}>{children}</body>
+      <body className={`${manrope.className} w-full h-full`}>
+        <div
+          vaul-drawer-wrapper=""
+          className="bg-surface-light min-w-full min-h-full"
+        >
+          {children}
+        </div>
+      </body>
     </html>
   );
 });
