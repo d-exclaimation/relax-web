@@ -6,7 +6,7 @@ import type { Dashboard } from "@/lib/types";
 import { rc } from "@d-exclaimation/next";
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import TeamCharts from "./team-charts";
 import TeamSelect from "./team-select";
 
@@ -41,6 +41,10 @@ export default rc<Props>(({ dash, max, teamId }) => {
       ),
     []
   );
+
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+  }, []);
 
   return (
     <div className="flex flex-col px-4 md:px-3 py-2 w-full md:h-full">
