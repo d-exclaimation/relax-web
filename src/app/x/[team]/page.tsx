@@ -15,5 +15,4 @@ export default page<{ P: Parameters }>(async ({ params }) => {
   );
 });
 
-export const revalidate = 10;
 export const runtime = "edge";
