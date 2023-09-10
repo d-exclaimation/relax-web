@@ -16,3 +16,4 @@ export default page<{ P: Parameters }>(async ({ params }) => {
 });
 
 export const runtime = "edge";
+export const dynamic = "force-dynamic";

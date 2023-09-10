@@ -9,7 +9,7 @@ export default rc<{ children: ReactNode }>(({ children }) => {
   return (
     <section
       key={`${pathname}-section`}
-      className="relative z-10 w-full md:max-w-5xl flex flex-col min-h-full"
+      className="relative z-10 w-full md:max-w-5xl flex flex-col min-h-full flex-1"
     >
       {children}
     </section>
